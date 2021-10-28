@@ -1,4 +1,6 @@
-public class Business implements Comparable<Business> {
+package entity;
+
+public class Business {
 
     private String businessId;
     private String name;
@@ -64,9 +66,4 @@ public class Business implements Comparable<Business> {
     public String toString() {
         return "Business ID: " + businessId + ", Name:" + name;
     }
-
-    @Override
-    public int compareTo(Business b) {
-        return getName().compareTo(b.getName());
-    }  
 }

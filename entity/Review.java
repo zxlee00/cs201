@@ -1,4 +1,6 @@
-public class Review implements Comparable<Review> {
+package entity;
+
+public class Review {
     
     private String reviewId;
     private String userId;
@@ -69,9 +71,4 @@ public class Review implements Comparable<Review> {
             ", Stars: " + getStars() +
             ", Text: " + getText();
     }
-
-    @Override
-    public int compareTo(Review r) {
-        return getReviewId().compareTo(r.getReviewId());
-    }  
 }
