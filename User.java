@@ -6,6 +6,14 @@ public class User implements Comparable<User> {
     private String friends;
     private double averageStars;
 
+    public User(String userId, String name, int reviewCount, String friends, double averageStars) {
+        this.userId = userId;
+        this.name = name;
+        this.reviewCount = reviewCount;
+        this.friends = friends;
+        this.averageStars = averageStars;
+    }
+
     public String getUserId() {
         return this.userId;
     }

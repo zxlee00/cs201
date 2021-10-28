@@ -7,6 +7,14 @@ public class Review implements Comparable<Review> {
     private String text;
 
 
+    public Review(String reviewId, String userId, String businessId, int stars, String text) {
+        this.reviewId = reviewId;
+        this.userId = userId;
+        this.businessId = businessId;
+        this.stars = stars;
+        this.text = text;
+    }
+
     public String getReviewId() {
         return this.reviewId;
     }
