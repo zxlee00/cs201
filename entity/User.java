@@ -1,4 +1,6 @@
-public class User implements Comparable<User> {
+package entity;
+
+public class User {
 
     private String userId;
     private String name;
@@ -62,10 +64,5 @@ public class User implements Comparable<User> {
             ", Review Count: " + getReviewCount() +
             ", Friends: " + getFriends() +
             ", Average Stars: " + getAverageStars();
-    }
-
-    @Override
-    public int compareTo(User u) {
-        return getName().compareTo(u.getName());
     }
 }
