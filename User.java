@@ -14,7 +14,11 @@ public class User implements Comparable<User> {
         this.averageStars = averageStars;
     }
 
-    public String getUserId() {
+    public User() {
+		super();
+	}
+
+	public String getUserId() {
         return this.userId;
     }
 

@@ -8,5 +8,7 @@
 	<classpathentry kind="src" path=""/>
 	<classpathentry kind="lib" path="json-simple-1.1.1.jar"/>
 	<classpathentry kind="lib" path="org.apache.commons.io.jar"/>
+	<classpathentry kind="lib" path="library/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="library/org.apache.commons.io.jar"/>
 	<classpathentry kind="output" path=""/>
 </classpath>

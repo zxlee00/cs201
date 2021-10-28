@@ -6,7 +6,13 @@ public class Business implements Comparable<Business> {
     private int reviewCount;
     private String categories;
     
-    public Business(String businessId, String name, double stars, int reviewCount, String categories) {
+    
+    
+    public Business() {
+		super();
+	}
+
+	public Business(String businessId, String name, double stars, int reviewCount, String categories) {
         this.businessId = businessId;
         this.name = name;
         this.stars = stars;
