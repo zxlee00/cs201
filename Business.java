@@ -1,15 +1,16 @@
-import java.util.Comparator;
-
-import javax.naming.spi.DirStateFactory.Result;
-
 public class Business implements Comparable<Business> {
+
     private String businessId;
     private String name;
+    private double stars;
+    private int reviewCount;
     private String categories;
     
-    public Business(String businessId, String name, String categories) {
+    public Business(String businessId, String name, double stars, int reviewCount, String categories) {
         this.businessId = businessId;
         this.name = name;
+        this.stars = stars;
+        this.reviewCount = reviewCount;
         this.categories = categories;
     }
 
@@ -35,6 +36,22 @@ public class Business implements Comparable<Business> {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getStars() {
+        return stars;
+    }
+
+    public void setStars(double stars) {
+        this.stars = stars;
+    }
+
+    public int getReviewCount() {
+        return reviewCount;
+    }
+
+    public void setReviewCount(int reviewCount) {
+        this.reviewCount = reviewCount;
     }
 
     @Override
