@@ -15,43 +15,41 @@ import entity.Business;
 
 
 public class Step1 {
+    public ArrayList<Business> filterRestaurantsArrayList(List<Business> businessList) {
+        ArrayList<Business> restaurantList = new ArrayList<Business>();
 
-    
-    
-    
-    
-    // Step 1 -- store filtered businesses
-    public static List<Business> filterRestaurantsToArrayList(String fileLoc, JSONParser parser) {
-    	
-    	List<Business> businessList = new ArrayList<Business>();
-    	
-    	try {
-            String fileContent = FileUtils.readFileToString(new File(fileLoc), "UTF-8");
-            String data = "[" + fileContent + "]";
-            JSONArray a = (JSONArray)parser.parse(data);
-
-            for (Object o : a) {
-            	
-                JSONObject business = (JSONObject) o;
-    
-                String businessId = (String) business.get("business_id");
-    
-                String name = (String) business.get("name");
-    
-                String categories = (String) business.get("categories");
-                
-                if(Objects.isNull(categories) || !categories.contains("Restaurant")) continue;
-
-//                businessList.add(new Business(businessId, name, categories));
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
+        for (Business b : businessList) {
+            if (Objects.nonNull(b.getCategories()) && b.getCategories().contains("Restaurant")) {
+                restaurantList.add(b);
+            }    
         }
-    	
-    	return businessList;
+
+        return restaurantList;
+    }
+
+    public SinglyLinkedList<Business> filterRestaurantsSinglyLinkedList(List<Business> businessList) {
+        SinglyLinkedList<Business> restaurantSll = new SinglyLinkedList<Business>();
+
+        for (Business b : businessList) {
+            if (Objects.nonNull(b.getCategories()) && b.getCategories().contains("Restaurant")) {
+                restaurantSll.addLast(b);
+            }    
+        }
+
+        return restaurantSll;
+    }
+
+    public LinkedBinaryTree<Business> filterRestaurantsLinkedBinaryTree(List<Business> businessList) {
+        LinkedBinaryTree<Business> restaurantLbt = new LinkedBinaryTree<Business>();
+
+        // Node<Integer> root = (Node<Integer>) restaurantLbt.addRoot(0);
+        // btree.addLeft(root, -4);
+        // btree.addRight(root, 4);
+        // btree.addLeft(root.getLeft(), -6);
+        // btree.addRight(root.getLeft(), -2);
+        // btree.addLeft(root.getRight(), 2);
+        // btree.addRight(root.getRight(), 6);
+
+        return restaurantLbt;
     }
 }

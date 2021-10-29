@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
@@ -26,8 +27,6 @@ public class SusFinder {
 	private static JSONParser parser;
 	
 	public static void main(String[] args) {
-		
-		// Step1 step1 = Step1();
 		
 		// each step = 1 class
 		// util tool? + algorithm (main method) => keep calling it to measure the parameters
@@ -70,10 +69,18 @@ public class SusFinder {
 		
 		
 		try {
-			List<Business> businessList = loadBusinessFromJson();
-			for(Business b: businessList) {
-				System.out.println(b.toString());
-			}
+			// List<Business> businessList = loadBusinessFromJson();
+			// for(Business b: businessList) {
+			// 	System.out.println(b.toString());
+			// }
+			Step1 step1 = new Step1();
+
+			ArrayList<Business> restaurantsAl = step1.filterRestaurantsArrayList(loadBusinessFromJson());
+			SinglyLinkedList<Business> restaurantsSll = step1.filterRestaurantsSinglyLinkedList(loadBusinessFromJson());
+	
+			System.out.println(restaurantsAl.size());
+			System.out.println(restaurantsSll.size());
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
