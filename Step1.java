@@ -38,18 +38,4 @@ public class Step1 {
 
         return restaurantSll;
     }
-
-    public LinkedBinaryTree<Business> filterRestaurantsLinkedBinaryTree(List<Business> businessList) {
-        LinkedBinaryTree<Business> restaurantLbt = new LinkedBinaryTree<Business>();
-
-        // Node<Integer> root = (Node<Integer>) restaurantLbt.addRoot(0);
-        // btree.addLeft(root, -4);
-        // btree.addRight(root, 4);
-        // btree.addLeft(root.getLeft(), -6);
-        // btree.addRight(root.getLeft(), -2);
-        // btree.addLeft(root.getRight(), 2);
-        // btree.addRight(root.getRight(), 6);
-
-        return restaurantLbt;
-    }
 }
