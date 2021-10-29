@@ -74,9 +74,11 @@ public class SusFinder {
 			// 	System.out.println(b.toString());
 			// }
 			Step1 step1 = new Step1();
+			
+			List<Business> businessList = loadBusinessFromJson();
 
-			ArrayList<Business> restaurantsAl = step1.filterRestaurantsArrayList(loadBusinessFromJson());
-			SinglyLinkedList<Business> restaurantsSll = step1.filterRestaurantsSinglyLinkedList(loadBusinessFromJson());
+			ArrayList<Business> restaurantsAl = step1.filterRestaurantsArrayList(businessList);
+			SinglyLinkedList<Business> restaurantsSll = step1.filterRestaurantsSinglyLinkedList(businessList);
 	
 			System.out.println(restaurantsAl.size());
 			System.out.println(restaurantsSll.size());
