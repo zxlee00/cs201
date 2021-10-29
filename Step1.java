@@ -11,6 +11,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import entity.Business;
+
 
 public class Step1 {
 
@@ -40,7 +42,7 @@ public class Step1 {
                 
                 if(Objects.isNull(categories) || !categories.contains("Restaurant")) continue;
 
-                businessList.add(new Business(businessId, name, categories));
+//                businessList.add(new Business(businessId, name, categories));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();

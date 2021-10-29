@@ -2,7 +2,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.text.ParseException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
@@ -11,6 +10,11 @@ import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import entity.Business;
+import entity.Review;
+import entity.User;
 
 
 public class SusFinder {
@@ -65,7 +69,18 @@ public class SusFinder {
 		parser = new JSONParser();
 		
 		
-		
+		try {
+			List<Business> businessList = loadBusinessFromJson();
+			for(Business b: businessList) {
+				System.out.println(b.toString());
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	
@@ -100,7 +115,7 @@ public class SusFinder {
 		b.setBusinessId((String) o.get("business_id"));
 		b.setCategories((String) o.get("categories"));
 		b.setName((String) o.get("name"));
-		b.setReviewCount((int) o.get("review_count"));
+		b.setReviewCount((long) o.get("review_count"));
 		b.setStars((double) o.get("stars"));
 		
 		return b;

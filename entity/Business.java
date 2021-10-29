@@ -5,7 +5,7 @@ public class Business {
     private String businessId;
     private String name;
     private double stars;
-    private int reviewCount;
+    private long reviewCount;
     private String categories;
     
     
@@ -54,11 +54,11 @@ public class Business {
         this.stars = stars;
     }
 
-    public int getReviewCount() {
+    public long getReviewCount() {
         return reviewCount;
     }
 
-    public void setReviewCount(int reviewCount) {
+    public void setReviewCount(long reviewCount) {
         this.reviewCount = reviewCount;
     }
 
