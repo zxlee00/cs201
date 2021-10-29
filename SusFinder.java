@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONArray;
@@ -79,9 +80,11 @@ public class SusFinder {
 
 			ArrayList<Business> restaurantsAl = step1.filterRestaurantsArrayList(businessList);
 			SinglyLinkedList<Business> restaurantsSll = step1.filterRestaurantsSinglyLinkedList(businessList);
-	
+			Set<Business> restaurantTreeSet = step1.filterRestaurantsBinaryTree(businessList);
+
 			System.out.println(restaurantsAl.size());
 			System.out.println(restaurantsSll.size());
+			System.out.println(restaurantTreeSet.size());
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

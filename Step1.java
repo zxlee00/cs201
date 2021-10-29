@@ -2,8 +2,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
+import java.util.TreeSet;
 
 import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONArray;
@@ -37,5 +39,22 @@ public class Step1 {
         }
 
         return restaurantSll;
+    }
+
+    public TreeSet<Business> filterRestaurantsBinaryTree(List<Business> businessList) {
+        TreeSet<Business> restaurantTreeSet = new TreeSet<Business>(new Comparator<Business>() {
+            @Override
+            public int compare(Business b1, Business b2) {
+                return b1.getBusinessId().compareTo(b2.getBusinessId());
+            }
+        });
+
+        for (Business b : businessList) {
+            if (Objects.nonNull(b.getCategories()) && b.getCategories().contains("Restaurant")) {
+                restaurantTreeSet.add(b);
+            }    
+        }
+
+        return restaurantTreeSet;
     }
 }
