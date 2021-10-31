@@ -96,6 +96,14 @@ public class SusFinder {
 	}
 	
 	
+	private static long calculateMemoryUsage() {
+		Runtime rt = Runtime.getRuntime();
+		// run garbage collection
+		rt.gc();
+		return rt.totalMemory() - rt.freeMemory();
+	}
+	
+	
 	private static void loadProperties() throws FileNotFoundException, IOException {
 		properties = new Properties();
 		properties.load(new FileInputStream(PROPERTIES_FILE));
