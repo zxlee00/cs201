@@ -12,7 +12,7 @@ public class SinglyLinkedList<E> implements Cloneable {
    * element and to the subsequent node in the list (or null if this
    * is the last node).
    */
-  private static class Node<E> {
+  public static class Node<E> {
 
     /** The element stored at this node */
     private E element;            // reference to the element stored at this node
@@ -86,6 +86,7 @@ public class SinglyLinkedList<E> implements Cloneable {
     if (isEmpty()) return null;
     return head.getElement();
   }
+
 
   /**
    * Returns (but does not remove) the last element of the list.
