@@ -87,6 +87,10 @@ public class SinglyLinkedList<E> implements Cloneable {
     return head.getElement();
   }
 
+  public Node<E> getHead() {             // returns (but does not remove) the first element
+    return head;
+  }
+
 
   /**
    * Returns (but does not remove) the last element of the list.
