@@ -79,40 +79,27 @@ public class step2 {
 
         Map<String, Integer> toReturn = new HashMap<>();
         for (Review review : reviewsList) {
-            Business current = businessList.first();
+            SinglyLinkedList.Node<Business> current = businessList.getHead();
+            while(current != null) {
+                // if review not in businessList, skip
+                if (!(current.getElement().getBusinessId().equals(review.getBusinessId()))) {
+                    continue;
+                }
+                // if review is sus, add it to the map
+                if (isSus(review)) {
+                    String userID = review.getUserId();
+                    if (toReturn.containsKey(userID)) {
+                        Integer x = toReturn.get(userID);
+                        toReturn.put(userID, x + 1);
+                    } else {
+                        toReturn.put(userID, 1);
+                    }
+                }
+                current = current.getNext();
+            }
         }
         return toReturn;
     }
-
-    // Returns Map<userID, numOfSusReviews>
-    // public Map<String, Integer> LinkedListToHashMap(List<Review> reviewsList, LinkedList<Business> businessList) {
-
-    //     Map<String, Integer> toReturn = new HashMap<>();
-    //     for (Review review : reviewsList) {
-    //         Node current = businessList;
-    //         while (current != null) {
-    //             // if review not in businessList, skip
-    //             if (!(current.getElement().getBusinessId.equals(review.getBusinessId()))) {
-    //                 current = current.getNext();
-    //                 continue;
-    //             }
-
-    //             // if review is sus, add it to the map
-    //             if (isSus(review)) {
-    //                 String userID = review.getUserId();
-    //                 if (toReturn.containsKey(userID)) {
-    //                     Integer x = toReturn.get(userID);
-    //                     toReturn.put(userID, x + 1);
-    //                 } else {
-    //                     toReturn.put(userID, 1);
-    //                 }
-    //             }
-
-    //             current = current.getNext();
-    //         }
-    //     }
-    //     return toReturn;
-    // }
     
     // public ArrayList<String> LinkedListToArrayList(List<Review> reviewsList, LinkedList<Business> businessList) {
 
