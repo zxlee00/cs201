@@ -5,10 +5,10 @@ public class User {
     private String userId;
     private String name;
     private int reviewCount;
-    private String friends;
+    private String[] friends;
     private double averageStars;
 
-    public User(String userId, String name, int reviewCount, String friends, double averageStars) {
+    public User(String userId, String name, int reviewCount, String[] friends, double averageStars) {
         this.userId = userId;
         this.name = name;
         this.reviewCount = reviewCount;
@@ -44,11 +44,11 @@ public class User {
         this.reviewCount = reviewCount;
     }
 
-    public String getFriends() {
+    public String[] getFriends() {
         return this.friends;
     }
 
-    public void setFriends(String friends) {
+    public void setFriends(String[] friends) {
         this.friends = friends;
     }
 
