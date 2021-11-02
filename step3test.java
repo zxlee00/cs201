@@ -9,7 +9,7 @@ import entity.User;
 
 public class step3test {
     public static void main(String[] args) {
-        step3 step3 = new step3();
+        Step3 step3 = new Step3();
         // Creating test data to use
         String[] u1Friends = new String[] { "wqoXYLWmpkEH0YvTmHBsJQ", "KUXLLiJGrjtSsapmxmpvTA",
                 "6e9rJKQC3n0RSKyHLViL-Q" };

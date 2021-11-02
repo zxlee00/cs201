@@ -15,7 +15,7 @@ import entity.Review;
 * 
 */
 // return userID linked to numOfSusReviews
-public class step2 {
+public class Step2 {
 
     // Returns Map<String userID, Integer numOfSusReviews>
     public Map<String, Integer> ArrayListToHashMap(List<Review> reviewsList, ArrayList<Business> businessList) {

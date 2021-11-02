@@ -9,7 +9,7 @@ import java.util.Comparator;
 public class step2test {
     public static void main(String[] args){
         // set up
-        step2 step2 = new step2();
+        Step2 step2 = new Step2();
         ArrayList<Business> bList = new ArrayList<Business>();
         List<Review> reviewsList = new ArrayList<>();
         SinglyLinkedList<Business> linkedBList = new SinglyLinkedList<>();
@@ -40,7 +40,7 @@ public class step2test {
         clear(bList, reviewsList, linkedBList, bTreeBList);
     }
 
-    public static String a2aTest(step2 step2, ArrayList<Business> bList, List<Review> reviewsList) {
+    public static String a2aTest(Step2 step2, ArrayList<Business> bList, List<Review> reviewsList) {
         Review r1 = new Review("rID", "uID", "bID", 1, "h");
         Review r2 = new Review("rID2", "uID", "bID", 1, "i");
         Review r3 = new Review("rID3", "uID", "bID", 1, "j");
@@ -60,7 +60,7 @@ public class step2test {
         return result.toString();
     }
 
-    public static String a2hTest(step2 step2, ArrayList<Business> bList, List<Review> reviewsList) {
+    public static String a2hTest(Step2 step2, ArrayList<Business> bList, List<Review> reviewsList) {
         Review r1 = new Review("rID", "uID", "bID", 1, "h");
         Review r2 = new Review("rID2", "uID", "bID", 1, "i");
         Review r3 = new Review("rID3", "uID", "bID", 1, "j");
@@ -80,7 +80,7 @@ public class step2test {
         return result.toString();
     }
 
-    public static String l2hTest(step2 step2, SinglyLinkedList<Business> bList, List<Review> reviewsList) {
+    public static String l2hTest(Step2 step2, SinglyLinkedList<Business> bList, List<Review> reviewsList) {
         Review r1 = new Review("rID", "uID", "bID", 1, "h");
         Review r2 = new Review("rID2", "uID", "bID", 1, "i");
         Review r3 = new Review("rID3", "uID", "bID", 1, "j");
@@ -100,7 +100,7 @@ public class step2test {
         return result.toString();
     }
 
-    public static String l2aTest(step2 step2, SinglyLinkedList<Business> bList, List<Review> reviewsList) {
+    public static String l2aTest(Step2 step2, SinglyLinkedList<Business> bList, List<Review> reviewsList) {
         Review r1 = new Review("rID", "uID", "bID", 1, "h");
         Review r2 = new Review("rID2", "uID", "bID", 1, "i");
         Review r3 = new Review("rID3", "uID", "bID", 1, "j");
@@ -120,7 +120,7 @@ public class step2test {
         return result.toString();
     }
 
-    public static String bt2aTest(step2 step2, TreeSet<Business> bList, List<Review> reviewsList) {
+    public static String bt2aTest(Step2 step2, TreeSet<Business> bList, List<Review> reviewsList) {
         Review r1 = new Review("rID", "uID", "bID", 1, "h");
         Review r2 = new Review("rID2", "uID", "bID", 1, "i");
         Review r3 = new Review("rID3", "uID", "bID", 1, "j");
@@ -140,7 +140,7 @@ public class step2test {
         return result.toString();
     }
 
-    public static String bt2hTest(step2 step2, TreeSet<Business> bList, List<Review> reviewsList) {
+    public static String bt2hTest(Step2 step2, TreeSet<Business> bList, List<Review> reviewsList) {
         Review r1 = new Review("rID", "uID", "bID", 1, "h");
         Review r2 = new Review("rID2", "uID", "bID", 1, "i");
         Review r3 = new Review("rID3", "uID", "bID", 1, "j");

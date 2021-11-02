@@ -15,9 +15,9 @@ import entity.User;
 * filename to user.json declared in step2 
 */
 
-public class step3 {
+public class Step3 {
 
-    public SinglyLinkedList<User> ArrayListToSinglyLinkedList(List<User> userList, ArrayList<String> fakeReviews) {
+    public SinglyLinkedList<User> arrayListToSinglyLinkedList(List<User> userList, ArrayList<String> fakeReviews) {
         SinglyLinkedList<User> toReturn = new SinglyLinkedList<>();
 
         for (int i = 0; i < fakeReviews.size(); i += 2) {
@@ -34,7 +34,7 @@ public class step3 {
         return toReturn;
     }
 
-    public SinglyLinkedList<User> HashMapToSinglyLinkedList(List<User> userList, Map<String, Integer> fakeReviews) {
+    public SinglyLinkedList<User> hashMapToSinglyLinkedList(List<User> userList, Map<String, Integer> fakeReviews) {
         // Singly Linked list to add all sus users
         SinglyLinkedList<User> toReturn = new SinglyLinkedList<>();
         for (User user : userList) {
@@ -54,7 +54,7 @@ public class step3 {
         return toReturn;
     }
 
-    public TreeSet<User> ArrayListToBinaryTree(List<User> userList, ArrayList<String> fakeReviews) {
+    public TreeSet<User> arrayListToBinaryTree(List<User> userList, ArrayList<String> fakeReviews) {
         TreeSet<User> toReturn = new TreeSet<User>(new Comparator<User>() {
             @Override
             public int compare(User u1, User u2) {
