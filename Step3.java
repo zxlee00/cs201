@@ -92,8 +92,7 @@ public class Step3 {
             }
 
             // reviewer is sus, cause 90%+ reviews were sus and <= 10 friends
-            if (((double) fakeReviews.get(user.getUserId()) / (double) user.getReviewCount()) >= 0.9
-                    && user.getFriends().length <= 10) {
+            if (((double) fakeReviews.get(user.getUserId()) / (double) user.getReviewCount()) >= 0.9) {
                 // add user to singlylinkedlist (if empty it adds the user as a head)
                 toReturn.add(user);
             }
