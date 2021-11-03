@@ -77,7 +77,7 @@ public class Step3 {
         return toReturn;
     }
 
-    public TreeSet<User> HashMapToBinaryTree(List<User> userList, Map<String, Integer> fakeReviews) {
+    public TreeSet<User> hashMapToBinaryTree(List<User> userList, Map<String, Integer> fakeReviews) {
         TreeSet<User> toReturn = new TreeSet<User>(new Comparator<User>() {
             @Override
             public int compare(User u1, User u2) {

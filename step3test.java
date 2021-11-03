@@ -33,7 +33,7 @@ public class step3test {
 
         // TEST:
         // ArrayListToSinglyLinkedList
-        SinglyLinkedList<User> al2sll = step3.ArrayListToSinglyLinkedList(userList, fakeReviewsArrayList);
+        SinglyLinkedList<User> al2sll = step3.arrayListToSinglyLinkedList(userList, fakeReviewsArrayList);
         System.out.println("ArrayList to Singly Linked List");
         System.out.println(al2sll.toString());
 
@@ -43,17 +43,17 @@ public class step3test {
         fakeReviewsHashMap.put(u3.getUserId(), 20); // good reviewser <= 0.9 (0.8)
 
         // HashMapToSinglyLinkedList
-        SinglyLinkedList<User> hm2sll = step3.HashMapToSinglyLinkedList(userList, fakeReviewsHashMap);
+        SinglyLinkedList<User> hm2sll = step3.hashMapToSinglyLinkedList(userList, fakeReviewsHashMap);
         System.out.println("HashMap to Singly Linked List: ");
         System.out.println(hm2sll.toString());
 
         // ArrayListToBinaryTree - Data taken from fakeReviewsArrayList
-        TreeSet<User> al2bt = step3.ArrayListToBinaryTree(userList, fakeReviewsArrayList);
+        TreeSet<User> al2bt = step3.arrayListToBinaryTree(userList, fakeReviewsArrayList);
         System.out.println("Array List to Binary Tree: ");
         System.out.println(al2bt.toString());
 
         // HashMapToBinaryTree - Data taken from fakeReviewsHashMap
-        TreeSet<User> hm2bt = step3.HashMapToBinaryTree(userList, fakeReviewsHashMap);
+        TreeSet<User> hm2bt = step3.hashMapToBinaryTree(userList, fakeReviewsHashMap);
         System.out.println("Hash Map to Binary Tree: ");
         System.out.println(hm2bt.toString());
     }

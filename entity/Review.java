@@ -5,7 +5,7 @@ public class Review {
     private String reviewId;
     private String userId;
     private String businessId;
-    private int stars;
+    private double stars;
     private String text;
     
     
@@ -15,7 +15,7 @@ public class Review {
 		super();
 	}
 
-	public Review(String reviewId, String userId, String businessId, int stars, String text) {
+	public Review(String reviewId, String userId, String businessId, double stars, String text) {
         this.reviewId = reviewId;
         this.userId = userId;
         this.businessId = businessId;
@@ -47,11 +47,11 @@ public class Review {
         this.businessId = businessId;
     }
 
-    public int getStars() {
+    public double getStars() {
         return this.stars;
     }
 
-    public void setStars(int stars) {
+    public void setStars(double stars) {
         this.stars = stars;
     }
 
