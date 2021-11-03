@@ -351,17 +351,45 @@ public class SusFinder {
 	private static List<User> loadUserFromJson() throws ParseException, IOException{
 		String filePath = properties.getProperty("rootDir") + "/" + properties.getProperty("userDataset");
 		File file = new File(filePath);
+
+		Iterator<Object> iter = FileUtils.lineIterator(file);
 		
-		String rawContent = FileUtils.readFileToString(file, "UTF-8");
-		JSONArray jsonArray = (JSONArray)parser.parse("[" + rawContent + "]");
+		List<Review> reviewList = new LinkedList<>();
+		
+		int i = 0;
+		
+		// String rawContent = FileUtils.readFileToString(file, "UTF-8");
+		// JSONArray jsonArray = (JSONArray)parser.parse("[" + rawContent + "]");
+
+
+		while(iter.hasNext()) {
+			
+			Object o = iter.next();
+			String s = (String) o;
+			
+			JSONObject jso = (JSONObject)parser.parse(s);
+			Review r = jsonToReview(jso);
+			
+			if(r != null) {
+				reviewList.add(r);
+				i++;
+				if(i == 10000) break;
+			}
+			
+		}
 		
 		List<User> userList = new LinkedList<>();
 		
-		for(Object o: jsonArray) {
-			if(o instanceof JSONObject) {
-				JSONObject jsonObject = (JSONObject) o;
-				userList.add(jsonToUser(jsonObject));
+		while(iter.hasNext()) {
+			Object o = iter.next();
+			String s = (String) o;
+			
+			JSONObject jsonObject = (JSONObject)parser.parse(s);
+			User u = jsonToUser(jsonObject);
+			if (u != null){
+				userList.add(u);
 			}
+			
 		}
 		
 		return userList;
@@ -375,7 +403,7 @@ public class SusFinder {
 		u.setName((String) o.get("name"));
 		u.setReviewCount((int) o.get("review_count"));
 		u.setUserId((String) o.get("user_id"));
-		
+		if (isFriendless(u)) return null;
 		return u;
 	}
 	
@@ -387,5 +415,10 @@ public class SusFinder {
         }
         return false;
     }
+	// <=10 friends
+	public static boolean isFriendless(User user){
+		return user.getFriends().length<=10;
+	}
 
+	
 }
