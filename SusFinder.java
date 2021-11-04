@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Properties;
 import java.util.TreeSet;
 
@@ -92,25 +93,25 @@ public class SusFinder {
 //			
 //			System.out.println();
 //			
-			long startMem = calculateMemoryUsage();
-			long startTime = System.currentTimeMillis();
-			SinglyLinkedList<Business> restaurantsSll = step1.filterRestaurantsSinglyLinkedList(businessList);
-			long endMem = calculateMemoryUsage();
-			long endTime = System.currentTimeMillis();
-			System.out.println("Step 1 - Singly Linked List:");
-			printInfo(startMem, endMem, startTime, endTime);
-			
-			System.out.println();
-//			
-//			startMem = calculateMemoryUsage();
-//			startTime = System.currentTimeMillis();
-//			TreeSet<Business> restaurantTreeSet = step1.filterRestaurantsBinaryTree(businessList);
-//			endMem = calculateMemoryUsage();
-//			endTime = System.currentTimeMillis();
-//			System.out.println("Step 1 - Binary Tree:");
+//			long startMem = calculateMemoryUsage();
+//			long startTime = System.currentTimeMillis();
+//			SinglyLinkedList<Business> restaurantsSll = step1.filterRestaurantsSinglyLinkedList(businessList);
+//			long endMem = calculateMemoryUsage();
+//			long endTime = System.currentTimeMillis();
+//			System.out.println("Step 1 - Singly Linked List:");
 //			printInfo(startMem, endMem, startTime, endTime);
 //			
 //			System.out.println();
+//			
+			long startMem = calculateMemoryUsage();
+			long startTime = System.currentTimeMillis();
+			TreeSet<Business> restaurantTreeSet = step1.filterRestaurantsBinaryTree(businessList);
+			long endMem = calculateMemoryUsage();
+			long endTime = System.currentTimeMillis();
+			System.out.println("Step 1 - Binary Tree:");
+			printInfo(startMem, endMem, startTime, endTime);
+			
+			System.out.println();
 //			
 			businessList = null;
 			System.gc();
@@ -145,15 +146,15 @@ public class SusFinder {
 //			
 //			System.out.println();
 //			
-			startMem = calculateMemoryUsage();
-			startTime = System.currentTimeMillis();
-			userIdToNumSusReviews = step2.LinkedListToHashMap(reviewList, restaurantsSll);
-			endMem = calculateMemoryUsage();
-			endTime = System.currentTimeMillis();
-			System.out.println("Step 2 - LinkedList to Hashmap:");
-			printInfo(startMem, endMem, startTime, endTime);	
-			
-			System.out.println();
+//			startMem = calculateMemoryUsage();
+//			startTime = System.currentTimeMillis();
+//			userIdToNumSusReviews = step2.LinkedListToHashMap(reviewList, restaurantsSll);
+//			endMem = calculateMemoryUsage();
+//			endTime = System.currentTimeMillis();
+//			System.out.println("Step 2 - LinkedList to Hashmap:");
+//			printInfo(startMem, endMem, startTime, endTime);	
+//			
+//			System.out.println();
 //			
 //			
 //			startMem = calculateMemoryUsage();
@@ -178,14 +179,16 @@ public class SusFinder {
 //			
 //			System.out.println();
 //			
-//			startMem = calculateMemoryUsage();
-//			startTime = System.currentTimeMillis();
-//			userIdNumSusReviewsArrayList = 
-//					step2.binaryTreeToArrayList(reviewList, restaurantTreeSet);
-//			endMem = calculateMemoryUsage();
-//			endTime = System.currentTimeMillis();
-//			System.out.println("Step 2 - BinaryTree to ArrayList:");
-//			printInfo(startMem, endMem, startTime, endTime);
+			startMem = calculateMemoryUsage();
+			startTime = System.currentTimeMillis();
+			userIdNumSusReviewsArrayList = 
+					step2.binaryTreeToArrayList(reviewList, restaurantTreeSet);
+			endMem = calculateMemoryUsage();
+			endTime = System.currentTimeMillis();
+			System.out.println("Step 2 - BinaryTree to ArrayList:");
+			printInfo(startMem, endMem, startTime, endTime);
+			
+			System.out.println();
 //			
 //			reviewList = null;
 //			System.gc();
@@ -198,6 +201,7 @@ public class SusFinder {
 			List<User> userList = loadUserFromJson();
 			SinglyLinkedList<User> susUsersSll;
 			TreeSet<User> susUsersTree;
+
 //			
 //			startMem = calculateMemoryUsage();
 //			startTime = System.currentTimeMillis();
@@ -213,26 +217,28 @@ public class SusFinder {
 //			susUsersSll = step3.hashMapToSinglyLinkedList(userList, userIdToNumSusReviews);
 //			endMem = calculateMemoryUsage();
 //			endTime = System.currentTimeMillis();
-//			System.out.println("Step 3 - HashMap to ArrayList:");
-//			printInfo(startMem, endMem, startTime, endTime);
-//			
-//			
-//			startMem = calculateMemoryUsage();
-//			startTime = System.currentTimeMillis();
-//			susUsersTree = step3.arrayListToBinaryTree(userList, userIdNumSusReviewsArrayList);
-//			endMem = calculateMemoryUsage();
-//			endTime = System.currentTimeMillis();
-//			System.out.println("Step 3 - ArrayList to BinaryTree:");
+//			System.out.println("Step 3 - HashMap to SinglyLinkedList:");
 //			printInfo(startMem, endMem, startTime, endTime);
 //			
 //			
 			startMem = calculateMemoryUsage();
 			startTime = System.currentTimeMillis();
-			susUsersTree = step3.hashMapToBinaryTree(userList, userIdToNumSusReviews);
+			susUsersTree = step3.arrayListToBinaryTree(userList, userIdNumSusReviewsArrayList);
 			endMem = calculateMemoryUsage();
 			endTime = System.currentTimeMillis();
-			System.out.println("Step 3 - HashMap to BinaryTree:");
+			System.out.println("Step 3 - ArrayList to BinaryTree:");
 			printInfo(startMem, endMem, startTime, endTime);
+//			
+//			
+//			startMem = calculateMemoryUsage();
+//			startTime = System.currentTimeMillis();
+//			susUsersTree = step3.hashMapToBinaryTree(userList, userIdToNumSusReviews);
+//			endMem = calculateMemoryUsage();
+//			endTime = System.currentTimeMillis();
+//			System.out.println("Step 3 - HashMap to BinaryTree:");
+//			printInfo(startMem, endMem, startTime, endTime);
+//			
+//			System.out.println(susUsersTree.size());
 			
 			
 			
@@ -338,7 +344,9 @@ public class SusFinder {
 		Review r = new Review();
 		r.setBusinessId((String) o.get("business_id"));
 		r.setReviewId((String) o.get("review_id"));
-		r.setStars((double) o.get("stars"));
+		Object obj = o.get("stars");
+		if(Objects.isNull(obj)) return null;
+		r.setStars((double) obj);
 		r.setText((String) o.get("text"));
 		r.setUserId((String) o.get("user_id"));
 		
@@ -354,7 +362,7 @@ public class SusFinder {
 
 		Iterator<Object> iter = FileUtils.lineIterator(file);
 		
-		List<Review> reviewList = new LinkedList<>();
+		List<User> userList = new LinkedList<>();
 		
 		int i = 0;
 		
@@ -368,26 +376,12 @@ public class SusFinder {
 			String s = (String) o;
 			
 			JSONObject jso = (JSONObject)parser.parse(s);
-			Review r = jsonToReview(jso);
+			User u = jsonToUser(jso);
 			
-			if(r != null) {
-				reviewList.add(r);
-				i++;
-				if(i == 10000) break;
-			}
-			
-		}
-		
-		List<User> userList = new LinkedList<>();
-		
-		while(iter.hasNext()) {
-			Object o = iter.next();
-			String s = (String) o;
-			
-			JSONObject jsonObject = (JSONObject)parser.parse(s);
-			User u = jsonToUser(jsonObject);
-			if (u != null){
+			if(u != null) {
 				userList.add(u);
+				i++;
+				if(i == 50000) break;
 			}
 			
 		}
@@ -399,9 +393,9 @@ public class SusFinder {
 	private static User jsonToUser(JSONObject o) {
 		User u = new User();
 		u.setAverageStars((double) o.get("average_stars"));
-		u.setFriends((String[]) o.get("friends"));
+		u.setFriends(((String) o.get("friends")).split(","));
 		u.setName((String) o.get("name"));
-		u.setReviewCount((int) o.get("review_count"));
+		u.setReviewCount((long) o.get("review_count"));
 		u.setUserId((String) o.get("user_id"));
 		if (isFriendless(u)) return null;
 		return u;

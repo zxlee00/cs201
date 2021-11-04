@@ -25,7 +25,7 @@ public class Step3 {
             for (User user : userList) {
                 if (user.getUserId().equals(fakeReviews.get(i))
                         && (Double.parseDouble(fakeReviews.get(i + 1)) / (double) user.getReviewCount()) >= 0.9
-                        && user.getFriends().length <= 10) {
+                        ) {
                     toReturn.addLast(user);
                     break;
                 }
@@ -46,7 +46,7 @@ public class Step3 {
 
             // reviewer is sus, cause 90%+ reviews were sus and <= 10 friends
             if (((double) fakeReviews.get(user.getUserId()) / (double) user.getReviewCount()) >= 0.9
-                    && user.getFriends().length <= 10) {
+                   ) {
                 // add user to singlylinkedlist (if empty it adds the user as a head)
                 toReturn.addLast(user);
             }
@@ -67,7 +67,7 @@ public class Step3 {
             for (User user : userList) {
                 if (user.getUserId().equals(fakeReviews.get(i))
                         && (Double.parseDouble(fakeReviews.get(i + 1)) / (double) user.getReviewCount()) >= 0.9
-                        && user.getFriends().length <= 10) {
+                       ) {
                     toReturn.add(user);
                     break;
                 }

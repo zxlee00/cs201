@@ -4,7 +4,7 @@ public class User {
 
     private String userId;
     private String name;
-    private int reviewCount;
+    private long reviewCount;
     private String[] friends;
     private double averageStars;
 
@@ -36,11 +36,11 @@ public class User {
         this.name = name;
     }
 
-    public int getReviewCount() {
+    public long getReviewCount() {
         return this.reviewCount;
     }
 
-    public void setReviewCount(int reviewCount) {
+    public void setReviewCount(long reviewCount) {
         this.reviewCount = reviewCount;
     }
 
