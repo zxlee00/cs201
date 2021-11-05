@@ -1,0 +1,1 @@
+javac -d target -cp ".:./library/json-simple-1.1.1.jar:./library/org.apache.commons.io.jar:" src/app/SusFinderApp.java

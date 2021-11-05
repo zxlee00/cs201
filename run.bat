@@ -1,0 +1,1 @@
+java -cp ".:./library/json-simple-1.1.1.jar:./library/org.apache.commons.io.jar:target" SusFinderApp
